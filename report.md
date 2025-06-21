@@ -125,4 +125,56 @@
 
 - `Ansible-плейбук`
 
-1. 
+1. Для виртуализации я использовал vagrant, мне удобно поднимать виртуальные машины через него. Вот пример моего Vagrantfile:
+
+![Dockerfile for php](images/vagrantfile.jpg)
+
+2. Далее покдлючаемся к нашей виртаульной машины с помощью команды vagrant ssh manager и заходим в нашу виртуальную машину.
+
+3. После этого создаем файл inventory в котором прописан ip-адрес нашей виртаульной машины и путь к ssh ключу. Далее создаем наш playbook.yml:
+
+![Dockerfile for php](images/playbook_1.jpg)
+
+![Dockerfile for php](images/playbook_2.jpg)
+
+4. Далее запускаем наш playbook с помощью команды ansible-playbook -i inventory playbook.yml и видим успешный результат выполнения нашего playbook.yml:
+
+![Dockerfile for php](images/playbookwork.jpg)
+
+5. Далее заходим на нашу виртуальную машину с помощью команды vagrant ssh manager и проверяем появились ли наши контейнеры запущены ли они а также проверяем работоспособность с помощью команды curl:
+
+![Dockerfile for php](images/curlservices1.jpg)
+
+![Dockerfile for php](images/curlservices2.jpg)
+
+
+
+### 4. Мини-задача по bash
+
+Напишите bash-скрипт, который:
+
+- `Проверяет доступность порта на IP (например, host:port)`
+- `В случае недоступности — пишет лог в файл`
+- `[плюсом] Возможность указания host и port через аргументы запуска`
+
+### Ожидается:
+
+- `bash-скрипт`
+
+1. Создаем файл и называем его check_port.sh
+
+![Dockerfile for php](images/bash.jpg)
+
+2. Результаты выполнения нашего скрипта:
+
+Поднимаем наши контейнеры и ввыполняем наш скрипт
+
+![Dockerfile for php](images/bashwork1.jpg)
+
+Далее выключаем контейнеры и проверяем работу нашего скрипта:
+
+![Dockerfile for php](images/bashwork2.jpg)
+
+Также видим что у нас появился файл port_check.log в котором записаны контейнеры которые не поднялись.
+
+![Dockerfile for php](images/bashwork3.jpg)

@@ -1,1 +1,1 @@
-manager ansible_host=192.168.56.11 ansible_user=vagrant ansible_ssh_private_key_file=/home/selenesa/Desktop/redbox_solutions/ansible/.vagrant/machines/manager/virtualbox/private_key
+manager ansible_host=192.168.56.15 ansible_user=vagrant ansible_ssh_private_key_file=/home/selenesa/Desktop/git/Redbox_test/.vagrant/machines/manager/virtualbox/private_key

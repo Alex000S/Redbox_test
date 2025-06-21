@@ -2,7 +2,7 @@ Vagrant.configure("2") do |config|
   # Определение машины "manager"
   config.vm.define "manager" do |manager|
     manager.vm.hostname = "manager"
-    manager.vm.network "private_network", ip: "192.168.56.11"
+    manager.vm.network "private_network", ip: "192.168.56.15"
 
     # Используем официальный box с Vagrant Cloud
     manager.vm.box = "ubuntu/focal64"
