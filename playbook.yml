@@ -53,3 +53,20 @@
         name: docker
         state: started
         enabled: true
+
+    - name: Install git
+      apt:
+        name: git
+        state: present
+
+    - name: Clone GitHub repository
+      git:
+        repo: 'https://github.com/Alex000S/Redbox_test'  # замените на свой URL
+        dest: /opt/echo-server
+        version: main  # можно указать ветку или тэг
+        force: yes
+
+    - name: Run docker-compose
+      community.docker.docker_compose:
+        project_src: /opt/echo-server
+        state: present  # или `started`, если нужен контроль состояния
